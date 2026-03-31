@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0a0f;
+  --color-bg-card: #12121a;
+  --color-bg-elevated: #1a1a25;
+  --color-border: #ffffff0d;
+  --color-border-hover: #ffffff1a;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888a0;
+  --color-text-muted: #555570;
+  --color-accent: #22c55e;
+  --color-accent-dim: #22c55e33;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg-primary);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -20%, #22c55e08 0%, transparent 80%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, #3b82f608 0%, transparent 80%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.glass-card {
+  background: linear-gradient(135deg, #ffffff06, #ffffff02);
+  border: 1px solid #ffffff0a;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px #00000040;
+}
+
+.glass-card:hover {
+  border-color: #ffffff15;
+  box-shadow: 0 8px 40px #00000060;
+}
+
+.habit-cell {
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.habit-cell:hover {
+  transform: scale(1.8);
+  z-index: 10;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.streak-glow {
+  animation: streak-pulse 2s ease-in-out infinite;
+}
+
+@keyframes streak-pulse {
+  0%, 100% { box-shadow: 0 0 8px #22c55e40; }
+  50% { box-shadow: 0 0 20px #22c55e60; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  box-shadow: 0 4px 20px #22c55e40;
+  transform: translateY(-1px);
+}
+
+.modal-backdrop {
+  background: #00000080;
+  backdrop-filter: blur(4px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ffffff15; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #ffffff25; }
+
+/* Grid tooltip */
+.tooltip {
+  position: absolute;
+  background: #1a1a25;
+  border: 1px solid #ffffff15;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 50;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px #00000060;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "HabitGrid",
+  "short_name": "HabitGrid",
+  "description": "Track your daily habits with beautiful GitHub-style contribution grids",
+  "start_url": "/habitgrid/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "/habitgrid/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
